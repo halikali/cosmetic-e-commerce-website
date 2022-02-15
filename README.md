@@ -1,19 +1,19 @@
 ## Clone the project
 
-`git clone https://github.com/halikali/cosmetic-e-commerce-website.git`
+```sh git clone https://github.com/halikali/cosmetic-e-commerce-website.git ```
 
 ## Install json server for fake backend
 
-`npm i -g json-server`
+```  npm i -g json-server  ```
 
 ## Install dependencies
 
-`npm i`
+``` npm i ```
 
 ## Run the project
 
-`npm run start`
+``` npm run start ```
 
 ## Run the fake backend
 
-`npm run start-backend`
+``` npm run start-backend ```
