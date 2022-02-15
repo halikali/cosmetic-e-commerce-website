@@ -3,20 +3,32 @@
 ```sh
 git clone https://github.com/halikali/cosmetic-e-commerce-website.git
 
- ```
+```
 
 ## Install json server for fake backend
 
-```  npm i -g json-server  ```
+```sh
+npm i -g json-server
+
+```
 
 ## Install dependencies
 
-``` npm i ```
+```sh
+npm i
+
+```
 
 ## Run the project
 
-``` npm run start ```
+```sh
+npm run start
+
+```
 
 ## Run the fake backend
 
-``` npm run start-backend ```
+```sh
+npm run start-backend
+
+```
