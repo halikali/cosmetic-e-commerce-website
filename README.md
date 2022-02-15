@@ -1,6 +1,9 @@
 ## Clone the project
 
-```sh git clone https://github.com/halikali/cosmetic-e-commerce-website.git ```
+```sh
+git clone https://github.com/halikali/cosmetic-e-commerce-website.git
+
+ ```
 
 ## Install json server for fake backend
 
