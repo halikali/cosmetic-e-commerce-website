@@ -10,6 +10,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  border-bottom: 1px solid gray;
 
   &__brand-name {
     /* font styling */
@@ -24,7 +25,7 @@
   .navbar {
     display: none;
 
-    @include media(tablet) {
+    @include media(web) {
       display: block;
       height: 50px;
     }
@@ -38,8 +39,12 @@
     }
 
     &__link {
-      text-decoration: none;
       color: black;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 0 15px;
     }
   }
 
@@ -48,7 +53,7 @@
     font-size: 18px;
 
     &--nav {
-      @include media(tablet) {
+      @include media(web) {
         display: none;
       }
     }
@@ -56,14 +61,14 @@
     &--heart {
       display: none;
 
-      @include media(tablet) {
+      @include media(web) {
         display: inline-block;
       }
     }
 
     &__wrapper {
       &--left {
-        @include media(tablet) {
+        @include media(web) {
           /* positioning */
           position: absolute;
           right: 105px;
