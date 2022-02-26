@@ -38,6 +38,11 @@
       height: 100%;
     }
 
+    &__list-item {
+      .active {
+        color: red;
+      }
+    }
     &__link {
       color: black;
       text-decoration: none;
