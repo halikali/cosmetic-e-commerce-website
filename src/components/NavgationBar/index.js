@@ -9,6 +9,7 @@ import {
   faNavicon,
 } from "@fortawesome/free-solid-svg-icons";
 
+import MobileNavbar from "../MobileNavbar";
 import "./navigationBar.scss";
 
 const NavgationBar = () => {
@@ -66,6 +67,8 @@ const NavgationBar = () => {
         <FontAwesomeIcon icon={faHeart} className={"icon icon--heart"} />
         <FontAwesomeIcon icon={faBagShopping} className={"icon"} />
       </div>
+
+      <MobileNavbar />
     </nav>
   );
 };
