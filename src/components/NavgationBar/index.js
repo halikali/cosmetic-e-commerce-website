@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBagShopping,
@@ -24,39 +24,39 @@ const NavgationBar = () => {
       <nav className="navbar">
         <ul className="navbar__list">
           <li className="navbar__list-item">
-            <Link to={"/"} className="navbar__link" activeClassName="selected">
+            <NavLink to={"/"} className="navbar__link" activeClassName="active">
               Home
-            </Link>
+            </NavLink>
           </li>
-          <li className="navbar__list-item" activeClassName="selected">
-            <Link to={"/shop"} className="navbar__link">
+          <li className="navbar__list-item" activeClassName="active">
+            <NavLink to={"/shop"} className="navbar__link">
               Shop
-            </Link>
+            </NavLink>
           </li>
-          <li className="navbar__list-item" activeClassName="selected">
-            <Link to={"/features"} className="navbar__link">
+          <li className="navbar__list-item" activeClassName="active">
+            <NavLink to={"/features"} className="navbar__link">
               Features
-            </Link>
+            </NavLink>
           </li>
-          <li className="navbar__list-item" activeClassName="selected">
-            <Link to={"/lookbook"} className="navbar__link">
+          <li className="navbar__list-item" activeClassName="active">
+            <NavLink to={"/lookbook"} className="navbar__link">
               Lookbook
-            </Link>
+            </NavLink>
           </li>
-          <li className="navbar__list-item" activeClassName="selected">
-            <Link to={"/pages"} className="navbar__link">
+          <li className="navbar__list-item" activeClassName="active">
+            <NavLink to={"/pages"} className="navbar__link">
               pages
-            </Link>
+            </NavLink>
           </li>
-          <li className="navbar__list-item" activeClassName="selected">
-            <Link to={"/blog"} className="navbar__link">
+          <li className="navbar__list-item" activeClassName="active">
+            <NavLink to={"/blog"} className="navbar__link">
               Blog
-            </Link>
+            </NavLink>
           </li>
-          <li className="navbar__list-item" activeClassName="selected">
-            <Link to={"/buy"} className="navbar__link">
+          <li className="navbar__list-item" activeClassName="active">
+            <NavLink to={"/buy"} className="navbar__link">
               Buy now
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
