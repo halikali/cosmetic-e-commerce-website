@@ -9,7 +9,7 @@ const MobileNavbar = ({ isOpen }) => {
   return createPortal(
     <div className={`mobile-navbar ${isOpen ? "opened" : "closed"}`}>
       <NavLinks>
-        <li className="navbar__list-item" activeClassName="active">
+        <li className="navbar__list-item" >
           <NavLink
             to={"/login"}
             className="navbar__link"
@@ -18,7 +18,7 @@ const MobileNavbar = ({ isOpen }) => {
             Login
           </NavLink>
         </li>
-        <li className="navbar__list-item" activeClassName="active">
+        <li className="navbar__list-item" >
           <NavLink
             to={"/register"}
             className="navbar__link"
@@ -27,7 +27,7 @@ const MobileNavbar = ({ isOpen }) => {
             Regıster
           </NavLink>
         </li>
-        <li className="navbar__list-item" activeClassName="active">
+        <li className="navbar__list-item" >
           <NavLink
             to={"/whislist"}
             className="navbar__link"
