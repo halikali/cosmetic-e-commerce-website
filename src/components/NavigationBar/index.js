@@ -13,7 +13,7 @@ import MobileNavbar from "../MobileNavbar";
 import NavLinks from "../NavLinks/NavLinks";
 import "./navigationBar.scss";
 
-const NavgationBar = () => {
+const NavigationBar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleMobileNavbar = (e) => {
@@ -56,7 +56,7 @@ const NavgationBar = () => {
   );
 };
 
-export default NavgationBar;
+export default NavigationBar;
 
 // navbar dropdown item example
 {
