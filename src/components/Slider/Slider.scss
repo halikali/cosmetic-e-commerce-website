@@ -28,8 +28,8 @@
     }
 
     &--left {
-      width: 460px;
       @include media(tablet) {
+        width: 460px;
         right: unset !important;
         left: 8% !important;
       }
