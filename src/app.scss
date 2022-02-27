@@ -1,9 +1,18 @@
-.app-wrapper{
-    display: flex;
-    justify-content: space-between;
-    
+.app {
+  min-width: 320px;
+  overflow: hidden;
 }
 
-#root{
-   width: 100vw;
+.app-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+#root {
+  width: 100vw;
+}
+
+.navbar-open {
+  position: relative;
+  left: 270px;
 }
