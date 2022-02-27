@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBagShopping,
+  faClose,
   faGear,
   faHeart,
   faMagnifyingGlass,
@@ -33,7 +34,7 @@ const NavgationBar = () => {
     <nav className="header">
       <div className="icon__wrapper icon__wrapper--left">
         <FontAwesomeIcon
-          icon={faNavicon}
+          icon={!isOpen ? faNavicon : faClose}
           className={"icon icon--nav"}
           onClick={toggleMobileNavbar}
         />
