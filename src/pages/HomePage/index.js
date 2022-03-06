@@ -17,10 +17,18 @@ const HomePage = () => {
       <Row>
         <Col>
           <div className="home-card__wrapper">
-            <HomeCard />
-            <HomeCard />
-            <HomeCard />
-            <HomeCard />
+            <div class="div1">
+              <HomeCard />
+            </div>
+            <div class="div2">
+              <HomeCard />
+            </div>
+            <div class="div3">
+              <HomeCard />
+            </div>
+            <div class="div4">
+              <HomeCard />
+            </div>
           </div>
         </Col>
       </Row>
