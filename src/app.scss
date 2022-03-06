@@ -1,5 +1,6 @@
 .app {
   min-width: 320px;
+  height: auto;
   overflow: hidden;
 }
 
@@ -9,7 +10,7 @@
 }
 
 #root {
-  width: 100vw;
+  width: 100%;
 }
 
 .navbar-close {
