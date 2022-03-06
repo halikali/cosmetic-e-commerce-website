@@ -1,14 +1,12 @@
 @import "../../css/mixins";
 
 .carousel {
-  height: 350px !important;
-
-  @include media(tablet) {
-    height: 550px !important;
+  @include media(only-mobile) {
+    height: 320px !important;
   }
 
   @include media(web) {
-    height: 700px !important;
+    height: 465px !important;
   }
 
   &__caption {
@@ -94,7 +92,7 @@
 }
 
 .carousel-indicators {
-  bottom: 15px;
+  // bottom: 15px !important;
   button {
     width: 12px !important;
     height: 12px !important;
