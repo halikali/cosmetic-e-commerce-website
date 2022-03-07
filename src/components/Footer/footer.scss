@@ -1,0 +1,61 @@
+@import "../../css/variables";
+@import "../../css/mixins";
+
+.footer {
+    bottom: 0;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    color: #000;
+    font-size: 1rem;
+    margin: auto 0;
+    width: 100%;
+
+    &__container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        @include media(mobil) {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__col {
+        margin: 20px 30px;
+
+        @include media(mobil) {
+            margin: 10px 20px;
+        }
+    }
+
+    &__logo {
+        font-size: 28px;
+        font-weight: bold;
+        font-family: map-get($fonts, brandFont);
+        letter-spacing: 1px;
+        margin: 0 0 10px;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__link {
+        color: #000;
+        font-size: 16px;
+        text-decoration: none;
+
+        &:hover {
+            color: #000;
+            text-decoration: underline;
+        } 
+    }
+
+    .copyright {
+        border-top: 1px solid #eee;
+        margin-top: 50px;
+        padding: 10px 0;
+        text-align: center;
+    }
+}
