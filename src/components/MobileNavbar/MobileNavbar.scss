@@ -1,0 +1,56 @@
+@import "../../css/mixins";
+
+.mobile-navbar {
+  display: block;
+  width: 270px;
+  height: 100%;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  z-index: 999;
+  left: -270px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 30%);
+  @include media(web) {
+    display: none;
+  }
+
+  &.closed {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.opened {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar {
+    &__list {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      width: 100%;
+    }
+
+    &__list-item {
+      width: 100%;
+      height: 42px;
+      vertical-align: middle;
+      border-bottom: 1px solid gray;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    &__link {
+      display: block;
+      width: auto;
+      height: 100%;
+      line-height: 30px;
+    }
+  }
+}

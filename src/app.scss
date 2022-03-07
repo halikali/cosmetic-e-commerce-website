@@ -1,0 +1,25 @@
+.app {
+  min-width: 320px;
+  height: auto;
+  overflow: hidden;
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+#root {
+  width: 100%;
+}
+
+.navbar-close {
+  position: relative;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-open {
+  left: 270px;
+  transition: left 0.3s ease-in-out;
+}

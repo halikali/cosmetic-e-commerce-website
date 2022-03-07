@@ -1,0 +1,118 @@
+@import "../../css/mixins";
+
+.carousel {
+  @include media(only-mobile) {
+    height: 320px !important;
+  }
+
+  @include media(web) {
+    height: 465px !important;
+  }
+
+  &__caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px;
+
+    &--right {
+      @include media(tablet) {
+        width: 460px;
+        left: unset !important;
+        right: 8% !important;
+      }
+    }
+
+    &--left {
+      @include media(tablet) {
+        width: 460px;
+        right: unset !important;
+        left: 8% !important;
+      }
+    }
+
+    &--title {
+      font-weight: 700;
+      font-size: 28px;
+
+      @include media(tablet) {
+        font-size: 32px;
+      }
+    }
+
+    &--text {
+      font-size: 12px;
+
+      @include media(tablet) {
+        font-size: 16px;
+      }
+    }
+
+    b,
+    span {
+      color: black;
+    }
+  }
+
+  /*=============================================
+  =      Overrite bootstrap carousel style      =
+  =============================================*/
+
+  a[class^="carousel-control"] {
+    span {
+      background-color: none;
+      background-image: none;
+      position: relative;
+
+      &::before {
+        color: #000;
+        font-family: "Font Awesome 5 Free";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+      }
+    }
+  }
+  .carousel-control-prev {
+    span {
+      &::before {
+        content: "\f359";
+      }
+    }
+  }
+  .carousel-control-next {
+    span {
+      &::before {
+        content: "\f35a";
+      }
+    }
+  }
+}
+
+.carousel-indicators {
+  // bottom: 15px !important;
+  button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50%;
+  }
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+
+  img {
+    @include media(tablet) {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+/*=====  End of Overrite bootstrap carousel style  ======*/

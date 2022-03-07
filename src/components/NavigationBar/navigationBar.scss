@@ -1,0 +1,63 @@
+@import "../../css/variables";
+@import "../../css/mixins";
+
+.header {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  /* flexbox */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid gray;
+
+  &__brand-name {
+    /* font styling */
+    font-size: 28px;
+    font-weight: bold;
+    font-family: map-get($fonts, brandFont);
+    letter-spacing: 1px;
+    /* margin*/
+    margin: 0;
+  }
+  .navbar {
+    display: none;
+    
+    @include media(web) {
+      display: block;
+      height: 50px;
+    }
+  }
+  .icon {
+    padding: 0 6px;
+    font-size: 18px;
+    cursor: pointer;
+    
+    &--nav {
+      @include media(web) {
+        display: none;
+      }
+    }
+
+    &--heart {
+      display: none;
+
+      @include media(web) {
+        display: inline-block;
+      }
+    }
+
+    &__wrapper {
+      &--left {
+        @include media(web) {
+          /* positioning */
+          position: absolute;
+          right: 105px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

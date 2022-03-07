@@ -1,31 +1,38 @@
 import React from "react";
-import { Button, Col, Row } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Col, Row } from "react-bootstrap";
+import HomeCard from "../../components/HomeCard";
 
+import Slider from "../../components/Slider";
 import "./HomePage.scss";
 
 const HomePage = () => {
   return (
-    <div>
-      <FontAwesomeIcon icon={faCoffee} />
-      <Row className="mx-0">
-        <Button as={Col} variant="primary">
-          <Link to="/" className="text-white">
-            Anasayfa
-          </Link>
-        </Button>
-        <Button as={Col} variant="secondary" className="mx-2">
-          <Link to={"/secondpage"} className="text-white">
-            İkinci sayfa
-          </Link>
-        </Button>
-        <Button as={Col} variant="success">
-          Button #3
-        </Button>
+    <>
+      <Row>
+        <Col>
+          <Slider />
+        </Col>
       </Row>
-    </div>
+
+      <Row>
+        <Col>
+          <div className="home-card__wrapper">
+            <div class="div1">
+              <HomeCard />
+            </div>
+            <div class="div2">
+              <HomeCard />
+            </div>
+            <div class="div3">
+              <HomeCard />
+            </div>
+            <div class="div4">
+              <HomeCard />
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </>
   );
 };
 
