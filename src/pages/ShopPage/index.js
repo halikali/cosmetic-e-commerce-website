@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 
 import { CategoryCard } from "../../components/CategoryCard/categoryCard";
 import Sidebar from "../../components/Sidebar";
+import { Link } from "react-router-dom";
 
 const SecondPage = () => {
   return (
@@ -17,7 +18,9 @@ const SecondPage = () => {
           <Row xs={1} md={2} lg={2} xl={3} className="g-4">
             {Array.from({ length: 12 }).map((_, idx) => (
               <Col>
-                <CategoryCard />
+                <Link to={"/details"}>
+                  <CategoryCard />
+                </Link>
               </Col>
             ))}
           </Row>
