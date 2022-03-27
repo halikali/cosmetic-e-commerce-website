@@ -1,0 +1,101 @@
+.details {
+  .info {
+    &__title {
+      color: #111;
+      text-transform: capitalize;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 15px px;
+    }
+
+    &__price {
+      color: #000;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    &__description {
+      font-family: Poppins, Arial, Tahoma, Verdana, sans-serif;
+      background-color: #fff;
+      color: #333333;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    &__description-left {
+      color: #ffffff;
+      padding: 1px 12px;
+      display: inline-block;
+      background: #ff656c;
+      margin: 10px 0;
+    }
+
+    &__color-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &__color {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    &__button-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__evaluation {
+      margin-bottom: 10px;
+    }
+
+    &__button {
+      flex: 1;
+      display: inline-block;
+      width: auto;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid #111111;
+      background-color: #111111;
+      color: #ffffff;
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 1;
+      font-size: 13px;
+      padding: 11px 24px;
+      border-radius: 0;
+      height: 41px;
+    }
+
+    &__counter {
+      box-sizing: border-box;
+      width: 90px;
+      height: 41px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      border: 1px solid gray;
+
+      span {
+        padding: 0 10px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
