@@ -18,7 +18,7 @@ const SecondPage = () => {
           <Row xs={1} md={2} lg={2} xl={3} className="g-4">
             {Array.from({ length: 12 }).map((_, idx) => (
               <Col>
-                <Link to={"/details"}>
+                <Link to={"/shop/details"}>
                   <CategoryCard />
                 </Link>
               </Col>
