@@ -15,7 +15,7 @@ const HomePage = () => {
       </Row>
 
       <Row>
-        <Col>
+        <Col className="col" md={8}>
           <div className="home-card__wrapper">
             <div class="div1">
               <HomeCard />

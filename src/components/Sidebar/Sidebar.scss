@@ -1,0 +1,42 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 14px;
+
+  &__title {
+    color: #111111;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+
+  .categories {
+    &__list-wrapper {
+      margin: 0;
+    }
+
+    &__list-item {
+      cursor: pointer;
+      height: 25px;
+
+      &:hover {
+        color: green;
+        transition: 0.3s ease;
+      }
+    }
+  }
+  .size {
+    &__list-wrapper {
+      column-count: 2;
+    }
+  }
+
+  .brand {
+    &__list-wrapper {
+      column-count: 2;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.checkbox {
+  &__label {
+    cursor: pointer;
+  }
+
+  &__input {
+    margin-right: 10px;
+    accent-color: black;
+  }
+}

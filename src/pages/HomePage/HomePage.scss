@@ -1,5 +1,9 @@
 @import "../../css/mixins";
 
+.col {
+  margin: auto;
+}
+
 .home-card__wrapper {
   display: none;
   grid-template-columns: repeat(2, 1fr);
@@ -7,21 +11,27 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   gap: 5px;
-  width: calc(100% - 150px);
+  width: 100%;
   margin: auto;
 
   @include media(tablet) {
     display: grid;
   }
 
-  .card__figure {
-    height: 100%;
-    position: relative;
-  }
+  .card {
+    &__figure {
+      height: 100%;
+      position: relative;
+    }
 
-  .card__figcaption {
-    right: 50%;
-    transform: translate(50%);
+    &__image {
+      object-fit: cover;
+    }
+
+    &__figcaption {
+      right: 50%;
+      transform: translate(50%);
+    }
   }
 
   .div1 {
