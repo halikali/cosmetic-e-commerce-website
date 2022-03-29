@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 
 import { CategoryCard } from "../../components/CategoryCard/categoryCard";
 import Sidebar from "../../components/Sidebar";
+import "./ShopPage.scss";
 import { Link } from "react-router-dom";
 
 const SecondPage = () => {
@@ -15,6 +16,12 @@ const SecondPage = () => {
           <Sidebar />
         </Col>
         <Col md={9}>
+        <div className="category-head">
+          <img className="category-head__image" src="https://cdn.shopify.com/s/files/1/0036/7306/3491/collections/collection-banner.jpg?v=1565000809"></img>
+          <h5 className="category-head__title">Hot Collection</h5>
+          <p className="category-head__desc">The very latest in globally-recognised clothing brands offers you with an exquisite range of Branded Clothes,
+           Artificial Jewelry, Shoes, Beauty Products and Accessories for Women, Men & Kids at affordable price</p>  
+        </div>
           <Row xs={1} md={2} lg={2} xl={3} className="g-4">
             {Array.from({ length: 12 }).map((_, idx) => (
               <Col>
