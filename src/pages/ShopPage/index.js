@@ -8,7 +8,12 @@ import Sidebar from "../../components/Sidebar";
 import "./ShopPage.scss";
 import { Link } from "react-router-dom";
 
-const SecondPage = () => {
+const ShopPage = () => {
+
+  const openFilter = () => {
+    document.querySelector(".sidebar").classList.add("sidebar__opened");
+  }
+
   return (
     <Container style={{ marginTop: "20px" }}>
       <Row>
@@ -22,6 +27,9 @@ const SecondPage = () => {
           <p className="category-head__desc">The very latest in globally-recognised clothing brands offers you with an exquisite range of Branded Clothes,
            Artificial Jewelry, Shoes, Beauty Products and Accessories for Women, Men & Kids at affordable price</p>  
         </div>
+
+          <a className="filter-button mb-4 mx-auto" onClick={(e) => openFilter(e)}>Filter</a>
+
           <Row xs={1} md={2} lg={2} xl={3} className="g-4">
             {Array.from({ length: 12 }).map((_, idx) => (
               <Col>
@@ -37,4 +45,4 @@ const SecondPage = () => {
   );
 };
 
-export default SecondPage;
+export default ShopPage;
