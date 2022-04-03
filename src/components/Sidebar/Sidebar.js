@@ -6,7 +6,6 @@ import "./Sidebar.scss";
 const Sidebar = () => {
 
   const closeFilter = (e) => {
-    console.log("closeFilter");
     document.querySelector(".sidebar").classList.remove("sidebar__opened");
   }
 
