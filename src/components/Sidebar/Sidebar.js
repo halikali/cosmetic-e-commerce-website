@@ -1,9 +1,18 @@
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Checkbox from "./Checkbox";
 import "./Sidebar.scss";
 
 const Sidebar = () => {
+
+  const closeFilter = (e) => {
+    console.log("closeFilter");
+    document.querySelector(".sidebar").classList.remove("sidebar__opened");
+  }
+
   return (
     <div className="sidebar">
+      <FontAwesomeIcon className="sidebar__icon" icon={faClose} onClick={(e) => closeFilter(e)} />
       <div className="categories">
         <h4 className="sidebar__title">Categories</h4>
         <ul
