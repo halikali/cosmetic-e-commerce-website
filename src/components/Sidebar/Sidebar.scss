@@ -1,8 +1,43 @@
+@import "../../css/mixins";
+
 .sidebar {
   display: flex;
   flex-direction: column;
   gap: 20px;
   font-size: 14px;
+
+  @include media(mobil) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    left: -100%;
+    transition: left 0.3s ease-in-out;
+  }
+
+  &__opened {
+    left: 0;
+    transition: left 0.3s ease-in-out;
+  }
+
+  &__icon {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    @include media(mobil) {
+      display: block;
+    }
+  }
 
   &__title {
     color: #111111;
