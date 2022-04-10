@@ -1,5 +1,7 @@
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
+import OrderPage from "./pages/OrderPage";
+
 import ProductDetail from "./pages/ProductDetail";
 
 const routes = [
@@ -18,6 +20,11 @@ const routes = [
     page: <ProductDetail />,
     name: "productDetail",
   },
+  {
+    path: "/order",
+    page: <OrderPage />,
+    name: "orderpage",
+  }
 ];
 
 export default routes;
