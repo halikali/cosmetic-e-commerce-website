@@ -1,5 +1,33 @@
+@import "../../css/mixins";
+
 .details {
+  height: auto;
+  width: 100%;
+
+  @include media(tablet) {
+    width: 80% !important;
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    height: 400px;
+
+    @include media(web) {
+      height: 580px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .info {
+    margin-top: 60px;
+    @include media(web) {
+      margin-top: 0;
+    }
     &__title {
       color: #111;
       text-transform: capitalize;
@@ -15,7 +43,7 @@
     }
 
     &__description {
-      font-family: Poppins, Arial, Tahoma, Verdana, sans-serif;
+      font-family: Arial;
       background-color: #fff;
       color: #333333;
       font-size: 13px;
@@ -35,6 +63,7 @@
       justify-content: flex-start;
       align-items: center;
       gap: 10px;
+      margin-bottom: 20px;
     }
 
     &__color {
@@ -44,6 +73,14 @@
       border: 1px solid #ccc;
       cursor: pointer;
       margin-right: 10px;
+      border: 2px solid white;
+      outline: 1px solid rgba(179, 175, 175, 0.705);
+
+      &--active {
+        border: 2px solid red;
+        position: relative;
+        display: block;
+      }
     }
 
     &__button-wrapper {
@@ -52,10 +89,23 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
+      margin-top: -10px;
     }
 
     &__evaluation {
       margin-bottom: 10px;
+
+      &--reviews {
+        color: rgba(51, 51, 51, 0.7);
+      }
+
+      &--stock {
+        color: #76bd1c;
+      }
+
+      & > span {
+        margin-left: 20px;
+      }
     }
 
     &__button {
@@ -96,6 +146,50 @@
         display: flex;
         align-items: center;
       }
+    }
+
+    &__counter-button {
+      cursor: pointer;
+    }
+  }
+
+  .whishlist {
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 10px;
+
+      @include media(tablet) {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      p {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .share {
+    &__button-wrapper {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+
+      @include media(web) {
+        padding-bottom: 30px;
+      }
+    }
+
+    &__text {
+      height: 16px;
+      text-align: center;
     }
   }
 }
