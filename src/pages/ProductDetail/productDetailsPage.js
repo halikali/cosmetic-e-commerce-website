@@ -26,8 +26,8 @@ const ProductDetailsPage = () => {
       <div className="row mx-auto">
         <div className="details__image-wrapper col-12 col-lg-6">
           <img
-            src={data && data.image_link}
-            alt={data && data.name}
+            src={data.image_link && data.image_link}
+            alt={data.name && data.name}
             className="details__image"
           />
           <div className="share__button-wrapper ">
@@ -56,8 +56,7 @@ const ProductDetailsPage = () => {
         </div>
         <div className="info col-12 col-lg-6 ">
           <h1 className="info__title">
-            {" "}
-            {data && data.brand} - {data && data.name}
+            {data.brand && data.brand} - {data.name && data.name}
           </h1>
           <div className="info__evaluation">
             starring -{" "}
@@ -74,8 +73,9 @@ const ProductDetailsPage = () => {
 
           <div className="info__color-wrapper">
             {data.product_colors &&
-              data.product_colors.map((item) => (
+              data.product_colors.map((item, i) => (
                 <span
+                  key={i}
                   className="info__color"
                   style={{ backgroundColor: item.hex_value }}
                 ></span>
@@ -111,8 +111,8 @@ const ProductDetailsPage = () => {
               <strong> Wednesday 06 April.</strong>
             </p>
             <p>
-              Type: {data && data.category} -{" "}
-              {data && data.product_type.replace("_", " ")}
+              Type: {data.category && data.category} -{" "}
+              {data.product_type && data.product_type.replace("_", " ")}
             </p>
             <p>
               Collections:{" "}

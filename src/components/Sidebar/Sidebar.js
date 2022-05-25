@@ -4,14 +4,17 @@ import Checkbox from "./Checkbox";
 import "./Sidebar.scss";
 
 const Sidebar = () => {
-
   const closeFilter = (e) => {
     document.querySelector(".sidebar").classList.remove("sidebar__opened");
-  }
+  };
 
   return (
     <div className="sidebar">
-      <FontAwesomeIcon className="sidebar__icon" icon={faClose} onClick={(e) => closeFilter(e)} />
+      <FontAwesomeIcon
+        className="sidebar__icon"
+        icon={faClose}
+        onClick={(e) => closeFilter(e)}
+      />
       <div className="categories">
         <h4 className="sidebar__title">Categories</h4>
         <ul
@@ -35,8 +38,8 @@ const Sidebar = () => {
             { size: "m" },
             { size: "l" },
             { size: "xl" },
-          ].map((item) => (
-            <Checkbox name={item.size} />
+          ].map((item, i) => (
+            <Checkbox name={item.size} key={i} />
           ))}
         </div>
       </div>
@@ -51,8 +54,8 @@ const Sidebar = () => {
             { type: " Shorts " },
             { type: " Tshirts " },
             { type: " Women's shoes " },
-          ].map((item) => (
-            <Checkbox name={item.type} />
+          ].map((item, i) => (
+            <Checkbox name={item.type} key={i} />
           ))}
         </div>
       </div>
@@ -69,17 +72,19 @@ const Sidebar = () => {
             { brandName: "Croock" },
             { brandName: "Givenchy" },
             { brandName: "Womeni" },
-          ].map((item) => (
-            <Checkbox name={item.brandName} />
+          ].map((item, i) => (
+            <Checkbox name={item.brandName} key={i} />
           ))}
         </div>
       </div>
       <div className="availability">
         <h4 className="sidebar__title">AVAILABILITY</h4>
         <div className="availability__list-wrapper">
-          {[{ status: "In stock" }, { status: "Out of stock" }].map((item) => (
-            <Checkbox name={item.status} />
-          ))}
+          {[{ status: "In stock" }, { status: "Out of stock" }].map(
+            (item, i) => (
+              <Checkbox name={item.status} key={i} />
+            )
+          )}
         </div>
       </div>
     </div>

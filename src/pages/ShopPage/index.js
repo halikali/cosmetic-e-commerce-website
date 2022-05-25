@@ -51,9 +51,9 @@ const ShopPage = () => {
           </a>
 
           <Row xs={1} md={2} lg={2} xl={3} className="g-4">
-            {product &&
-              product.data.map((item) => (
-                <Col>
+            {product.data &&
+              product.data.map((item, i) => (
+                <Col key={i}>
                   <Link to={`/shop/details/${item.id}`}>
                     <CategoryCard
                       productName={item.name}
