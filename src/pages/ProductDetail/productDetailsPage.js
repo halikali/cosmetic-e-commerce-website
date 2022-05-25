@@ -6,16 +6,28 @@ import {
   faTruck,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { getProductById } from "../../store/actions";
 import "./ProductDetail.scss";
 
-const index = () => {
+const ProductDetailsPage = () => {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const { data } = useSelector((state) => state.details);
+
+  useEffect(() => {
+    dispatch(getProductById(id));
+  }, []);
+
   return (
     <div className="container details mt-3">
       <div className="row mx-auto">
         <div className="details__image-wrapper col-12 col-lg-6">
           <img
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-            alt=""
+            src={data && data.image_link}
+            alt={data && data.name}
             className="details__image"
           />
           <div className="share__button-wrapper ">
@@ -43,35 +55,31 @@ const index = () => {
           </div>
         </div>
         <div className="info col-12 col-lg-6 ">
-          <h1 className="info__title"> casual indigo shirt </h1>
+          <h1 className="info__title">
+            {" "}
+            {data && data.brand} - {data && data.name}
+          </h1>
           <div className="info__evaluation">
             starring -{" "}
             <span className="info__evaluation--reviews"> 3 reviews </span>{" "}
             <span className="info__evaluation--stock">in stocks</span>
             <span> SKU:AVo1-D-46</span>
           </div>
-          <h3 className="info__price">$382.00</h3>
+          <h3 className="info__price">${data && data.price}</h3>
           <p className="info__description">
-            The construction lifts and smooths, giving your rear assets all they
-            need for an amped-up style that screams sex appeal from every angle.
-            With a chic hue, this one makes for a perfect pick this fall. So get
-            your basics... <br />
+            {data.description && data.description}
+            <br />
             <span className="info__description-left">Hurry, only 6 left!</span>
           </p>
 
           <div className="info__color-wrapper">
-            <span
-              className="info__color"
-              style={{ backgroundColor: "red" }}
-            ></span>
-            <span
-              className="info__color"
-              style={{ backgroundColor: "green" }}
-            ></span>
-            <span
-              className="info__color"
-              style={{ backgroundColor: "blue" }}
-            ></span>
+            {data.product_colors &&
+              data.product_colors.map((item) => (
+                <span
+                  className="info__color"
+                  style={{ backgroundColor: item.hex_value }}
+                ></span>
+              ))}
           </div>
           <div className="whishlist__wrapper">
             <p>
@@ -102,10 +110,13 @@ const index = () => {
               <span>Thursday 31 March</span> and
               <strong> Wednesday 06 April.</strong>
             </p>
-            <p>Type: Shirts</p>
             <p>
-              Collections: All Products, Bottoms, Home page, Hot Collection,
-              Men,
+              Type: {data && data.category} -{" "}
+              {data && data.product_type.replace("_", " ")}
+            </p>
+            <p>
+              Collections:{" "}
+              {data.tag_list && data.tag_list.map((item) => <a> {item},</a>)}
             </p>
           </div>
         </div>
@@ -114,4 +125,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default ProductDetailsPage;
