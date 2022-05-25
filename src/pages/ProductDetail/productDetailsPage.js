@@ -114,10 +114,15 @@ const ProductDetailsPage = () => {
               Type: {data.category && data.category} -{" "}
               {data.product_type && data.product_type.replace("_", " ")}
             </p>
-            <p>
-              Collections:{" "}
-              {data.tag_list && data.tag_list.map((item) => <a> {item},</a>)}
-            </p>
+
+            {data.tag_list && (
+              <p>
+                Collections:{" "}
+                {data.tag_list.map((item, i) => (
+                  <a key={i}> {item},</a>
+                ))}
+              </p>
+            )}
           </div>
         </div>
       </div>
