@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBagShopping,
@@ -8,13 +8,25 @@ import {
   faMagnifyingGlass,
   faNavicon,
 } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 
 import MobileNavbar from "../MobileNavbar";
 import NavLinks from "../NavLinks/NavLinks";
 import "./navigationBar.scss";
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const { products } = useSelector((state) => state.card);
+  let [productCount, setProductCount] = useState(0);
+
+  useEffect(() => {
+    setProductCount(products.length);
+  }, []);
+
+  useEffect(() => {
+    setProductCount(products.length);
+  }, [products]);
 
   const toggleMobileNavbar = (e) => {
     e.preventDefault();
@@ -40,17 +52,18 @@ const NavigationBar = () => {
         />
         <FontAwesomeIcon icon={faMagnifyingGlass} className={"icon"} />
       </div>
-
       <p className="header__brand-name">AVONE</p>
-
       <NavLinks />
-
       <div className="icon__wrapper icon__wrapper--right">
         <FontAwesomeIcon icon={faGear} className={"icon"} />
         <FontAwesomeIcon icon={faHeart} className={"icon icon--heart"} />
-        <FontAwesomeIcon icon={faBagShopping} className={"icon"} />
+        <Link to={"/order"}>
+          <FontAwesomeIcon icon={faBagShopping} className={"icon icon--bag"} />
+        </Link>
+        <p className="icon--bag-count">
+          {productCount > 0 ? productCount : ""}
+        </p>
       </div>
-
       <MobileNavbar isOpen={isOpen} />
     </nav>
   );
