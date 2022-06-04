@@ -47,6 +47,18 @@
       }
     }
 
+    &--bag {
+      position: relative;
+    }
+
+    &--bag-count {
+      position: absolute;
+      width: 20px;
+      top: 2px;
+      right: 7px;
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    }
+
     &__wrapper {
       &--left {
         @include media(web) {
