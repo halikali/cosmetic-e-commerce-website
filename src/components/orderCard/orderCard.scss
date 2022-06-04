@@ -1,0 +1,100 @@
+@import "../../css/mixins";
+
+.card {
+  &__orders {
+    align-items: center;
+    display: flex;
+    color: #444444;
+    font-weight: 700;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    @include media(mobil) {
+      border-top: 1px solid #f4f4f4;
+      padding: 10px 5px;
+    }
+
+    &-item {
+      align-items: center;
+      display: flex;
+      width: 252px;
+
+      &:first-child {
+        width: 25px;
+      }
+
+      &.item--order {
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+        width: 500px;
+
+        .item--order__image {
+          img {
+            width: 90px;
+            height: 90px;
+
+            @include media(mobil) {
+              width: 60px;
+              height: 76px;
+            }
+          }
+        }
+
+        .item--order__text {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-left: 20px;
+
+          @include media(mobil) {
+            margin: 0 10px;
+          }
+
+          span {
+            font-weight: 300;
+          }
+        }
+      }
+
+      &.item--remove {
+        align-items: center;
+        background-color: #000;
+        border-radius: 25px;
+        display: flex;
+        font-size: 10px;
+        justify-content: center;
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+
+        a {
+          color: #fff !important;
+        }
+      }
+    }
+  }
+
+  &__orders-counter {
+    box-sizing: border-box;
+    width: 90px;
+    height: 41px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border: 1px solid gray;
+
+    span {
+      padding: 0 10px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}
