@@ -1,274 +1,201 @@
 @import "../../css/mixins";
 
 .page-title {
-    margin-bottom: 30px;
-    text-align: center;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  a {
+    color: #000 !important;
+  }
+
+  &__header {
+    background-color: #f5f5f5;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
+    color: #444444;
+    font-weight: 700;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    @include media(mobil) {
+      display: none;
+    }
+
+    &-item {
+      width: 252px;
+
+      &:first-child {
+        width: 25px;
+      }
+
+      &.item--product {
+        width: 500px;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &__edit {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
 
     a {
-        color: #000!important;
+      color: #f17171 !important;
     }
-
-    &__header {
-        background-color: #f5f5f5;
-        display: flex;
-        color: #444444;
-        font-weight: 700;
-        justify-content: space-between;
-        padding: 10px 20px;
-
-        @include media(mobil) {
-            display: none;
-        }
-
-        &-item {
-            width: 252px;
-
-            &:first-child {
-                width: 25px;
-            }
-
-            &.item--product {
-                width: 500px;
-                margin-left: 5px;
-            }
-        }
-    }
-
-    &__orders {
-        align-items: center;
-        display: flex;
-        color: #444444;
-        font-weight: 700;
-        justify-content: space-between;
-        padding: 10px 20px;
-
-        @include media(mobil) {
-            border-top: 1px solid #f4f4f4;
-            padding: 10px 5px;
-        }
-
-        &-item {
-            align-items: center;
-            display: flex;
-            width: 252px;
-
-            &:first-child {
-                width: 25px;
-            }
-
-            &.item--order {
-                align-items: center;
-                display: flex;
-                justify-content: flex-start;
-                width: 500px;
-
-                .item--order__image {
-
-                    img {
-                        @include media(mobil) {
-                            width: 60px;
-                            height: 76px;
-                        }
-                    }
-                }
-
-                .item--order__text {
-                    align-items: center;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    margin-left: 20px;
-
-                    @include media(mobil) {
-                        margin: 0 10px;
-                    }
-
-                    span {
-                        font-weight: 300;
-                    }
-                }
-            }
-
-            &.item--remove {
-                align-items: center;
-                background-color: #000;
-                border-radius: 25px;
-                display: flex;
-                font-size: 10px;
-                justify-content: center;
-                margin-right: 10px;
-                width: 20px;
-                height: 20px;
-
-                a {
-                    color: #fff!important;
-                }
-            }
-        }
-    }
-
-    &__edit {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 20px;
-
-        a {
-            color: #f17171!important;
-        }
-    }
+  }
 }
 
 .message {
-    background: #f5f5f5;
-    border: 0;
+  background: #f5f5f5;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  padding: 25px;
+  width: 100%;
+
+  &__title {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-    padding: 25px;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+
+    &--gift {
+      color: #444;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+
+  &__note {
+    border: 1px solid #ddd;
+    resize: none;
     width: 100%;
+    min-height: 100px;
+  }
 
-    &__title {
-        display: flex;
-        flex-direction: row;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 12px;
-        text-transform: uppercase;
-
-        &--gift {
-            color: #444;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-    }
-
-    &__note {
-        border: 1px solid #ddd;
-        resize: none;
-        width: 100%;
-        min-height: 100px;
-    }
-
-    &__gift {
-        font-size: 14px;
-        font-weight: 600;
-        margin: 12px 0;
-        text-transform: uppercase;
-    }
+  &__gift {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 12px 0;
+    text-transform: uppercase;
+  }
 }
 
 .address {
-    background: #f5f5f5;
-    border: 0;
+  background: #f5f5f5;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  padding: 25px;
+  width: 100%;
+
+  &__title {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-    padding: 25px;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+
+    &--label {
+      font-size: 14px;
+      font-weight: 400;
+      margin: 9px 0;
+    }
+  }
+
+  &__select {
+    background: #fff;
+    cursor: pointer;
+    padding-right: 30px;
+    appearance: none;
+    padding: 5px 18px;
+  }
+
+  &__postalcode {
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    height: 30px;
+    resize: none;
+    width: 100%;
+  }
+
+  &__btn {
+    background-color: #e34848;
+    border-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    display: block;
+    padding: 5px 24px;
+    text-align: center;
+    text-transform: uppercase;
     width: 100%;
 
-    &__title {
-        display: flex;
-        flex-direction: row;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 12px;
-        text-transform: uppercase;
-
-        &--label {
-            font-size: 14px;
-            font-weight: 400;
-            margin: 9px 0;
-        }
+    &:hover {
+      color: #f5f5f5;
     }
-
-    &__select {
-        background: #fff;
-        cursor: pointer;
-        padding-right: 30px;
-        appearance: none;
-        padding: 5px 18px;
-    }
-
-    &__postalcode {
-        border: 1px solid #ddd;
-        margin-bottom: 12px;
-        height: 30px;
-        resize: none;
-        width: 100%;
-    }
-
-    &__btn {
-        background-color: #e34848;
-        border-color: rgba(0,0,0,0);
-        color: #fff;
-        display: block;
-        padding: 5px 24px;
-        text-align: center;
-        text-transform: uppercase;
-        width: 100%;
-
-        &:hover {
-            color: #f5f5f5;
-        }
-    }
+  }
 }
 
 .total {
-    background: #f5f5f5;
-    border: 0;
+  background: #f5f5f5;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  padding: 25px;
+  width: 100%;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 21px;
+    text-transform: uppercase;
+  }
+
+  &__info {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
-    padding: 25px;
+    margin-bottom: 21px;
+
+    &--text {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__btn {
+    background-color: #000;
+    border-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    display: block;
+    padding: 10px 24px;
+    text-align: center;
+    text-transform: uppercase;
     width: 100%;
 
-    &__head {
-        display: flex;
-        justify-content: space-between;
+    &.btn--gpay {
+      margin-top: 20px;
+      height: 54px;
     }
 
-    &__title {
-        display: flex;
-        flex-direction: row;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 21px;
-        text-transform: uppercase;
+    &:hover {
+      color: #f5f5f5;
     }
-
-    &__info {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 21px;
-        
-        &--text {
-            margin-bottom: 22px;
-        }
-    }
-
-    &__btn {
-        background-color: #000;
-        border-color: rgba(0,0,0,0);
-        color: #fff;
-        display: block;
-        padding: 10px 24px;
-        text-align: center;
-        text-transform: uppercase;
-        width: 100%;
-
-        &.btn--gpay {
-            margin-top: 20px;
-            height: 54px;
-        }
-
-        &:hover {
-            color: #f5f5f5;
-        }
-    }
+  }
 }
