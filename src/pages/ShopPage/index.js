@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import { useDispatch, useSelector } from "react-redux";
 import { CategoryCard } from "../../components/CategoryCard/categoryCard";
 import Sidebar from "../../components/Sidebar";
-import "./ShopPage.scss";
 import { getAllProducts } from "../../store/actions";
+import "./ShopPage.scss";
 
 const ShopPage = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const ShopPage = () => {
           <div className="category-head">
             <img
               className="category-head__image"
-              src="https://cdn.shopify.com/s/files/1/0036/7306/3491/collections/collection-banner.jpg?v=1565000809"
+              src="http://cdn.shopify.com/s/files/1/0036/7306/3491/collections/collection-banner.jpg?v=1565000809"
             ></img>
             <h5 className="category-head__title">Hot Collection</h5>
             <p className="category-head__desc">
@@ -55,13 +55,7 @@ const ShopPage = () => {
               product.data.map((item, i) => (
                 <Col key={i}>
                   <Link to={`/shop/details/${item.id}`}>
-                    <CategoryCard
-                      productName={item.name}
-                      coverImage={item.image_link}
-                      price={item.price}
-                      colors={item.product_colors}
-                      key={item.id}
-                    />
+                    <CategoryCard product={item} key={item.id} />
                   </Link>
                 </Col>
               ))}
