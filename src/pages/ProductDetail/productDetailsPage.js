@@ -6,14 +6,19 @@ import {
   faTruck,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+
 import { getProductById } from "../../store/actions";
+import { addToCard } from "../../store/actions/cardActions";
+import { changeTextProtocol } from "../../utils";
 import "./ProductDetail.scss";
 
 const ProductDetailsPage = () => {
   const dispatch = useDispatch();
+  let [count, setCount] = useState(1);
+
   const { id } = useParams();
   const { data } = useSelector((state) => state.details);
 
@@ -21,12 +26,17 @@ const ProductDetailsPage = () => {
     dispatch(getProductById(id));
   }, []);
 
+  const handleAddToCard = () => {
+    dispatch(addToCard({ ...data, productCount: count }));
+    setCount(1);
+  };
+
   return (
     <div className="container details mt-3">
       <div className="row mx-auto">
         <div className="details__image-wrapper col-12 col-lg-6">
           <img
-            src={data.image_link && data.image_link}
+            src={data.image_link && changeTextProtocol(data.image_link)}
             alt={data.name && data.name}
             className="details__image"
           />
@@ -60,7 +70,7 @@ const ProductDetailsPage = () => {
           </h1>
           <div className="info__evaluation">
             starring -{" "}
-            <span className="info__evaluation--reviews"> 3 reviews </span>{" "}
+            <span className="info__evaluation--reviews"> 3 reviews </span>
             <span className="info__evaluation--stock">in stocks</span>
             <span> SKU:AVo1-D-46</span>
           </div>
@@ -94,9 +104,18 @@ const ProductDetailsPage = () => {
           </div>
           <div className="info__button-wrapper">
             <p className="info__counter">
-              <span>-</span> 1 <span>+</span>
+              <span onClick={() => count >= 1 && setCount(count--)}>-</span>
+              {count}
+              <span onClick={() => setCount(count++)}>+</span>
             </p>
-            <a className="info__button">add to cart</a>
+            <a
+              className="info__button"
+              onClick={() => {
+                handleAddToCard();
+              }}
+            >
+              add to cart
+            </a>
           </div>
 
           <div className="info__shipping">
