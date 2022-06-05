@@ -9,6 +9,7 @@ import { CategoryCard } from "../../components/CategoryCard/categoryCard";
 import Sidebar from "../../components/Sidebar";
 import { getAllProducts } from "../../store/actions";
 import "./ShopPage.scss";
+import Pagination from "../../components/pagination";
 
 const ShopPage = () => {
   const dispatch = useDispatch();
@@ -59,6 +60,9 @@ const ShopPage = () => {
                   </Link>
                 </Col>
               ))}
+            <Col style={{ display: "flex", justifyContent: "center" }}>
+              <Pagination />
+            </Col>
           </Row>
         </Col>
       </Row>
