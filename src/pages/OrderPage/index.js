@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import "./OrderPage.scss";
+import { scrollToTop } from "../../utils";
 import OrderCard from "../../components/orderCard";
+import "./OrderPage.scss";
 
 const OrderPage = () => {
   const { products } = useSelector((state) => state.card);
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   return (
     <Container style={{ marginTop: "20px" }}>

@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 
 import { getProductById } from "../../store/actions";
 import { addToCard } from "../../store/actions/cardActions";
-import { changeTextProtocol } from "../../utils";
+import { changeTextProtocol, scrollToTop } from "../../utils";
 import "./ProductDetail.scss";
 
 const ProductDetailsPage = () => {
@@ -24,6 +24,7 @@ const ProductDetailsPage = () => {
 
   useEffect(() => {
     dispatch(getProductById(id));
+    scrollToTop();
   }, []);
 
   const handleAddToCard = () => {
